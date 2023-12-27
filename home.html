@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waheed Fruit Merchat</title>
+  <style>
+  	.container {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden; /* Clearfix to contain floated elements */
+        }
+	 h2, h3 {
+            color: green;
+        }
+        .box {
+            box-sizing: border-box;
+            float: left;
+            width: 50%; /* Two boxes side by side */
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f5f5f5;
+        }
+
+        @media (max-width: 768px) {
+            /* For smaller screens, make the boxes stack on top of each other */
+            .box {
+                width: 100%;
+            }
+        }
+        
+         @media (max-width: 768px) {
+            /* For smaller screens, make the boxes stack on top of each other */
+            .hd {
+                width: 100%;
+            }
+        }
+  	
+    .slideshow-container {
+      max-width: auto;
+      position: relative;
+      /* margin: auto; */
+      border: 3px solid #ddd; /* Border color */
+      border-color: green;
+      overflow: hidden;
+    }
+
+    .mySlides {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      height: 400px; /* Set the desired height for the images */
+      object-fit: cover; /* Maintain aspect ratio and cover container */
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 85%;
+      width: auto;
+      padding: 10px;
+      color: green; /* Button color */
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      background-color: transparent; /* Background color with transparency */
+    }
+
+    .next {
+      right: 0;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff; /* Hover color */
+    }
+  </style>
+  
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <h1>Waheed Fruit Merchat</h1>
+  
+</header>
+
+<div class="hd">
+<nav>
+  <a href="home.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="aboutus.html">About Us</a>
+</nav>
+</div>
+
+<div class="container" id="display">
+<div class="box">
+<div class="slideshow-container">
+  <div class="mySlides">
+    <img src="water-melon1.jpg" alt="Photo water melon">
+  </div>
+
+  <div class="mySlides">
+    <img src="orange_image1.jpg" alt="orange_image1">
+  </div>
+
+  <div class="mySlides">
+    <img src="pomegranate_image.jpg" alt="pomegranate_image">
+  </div>
+  
+  <div class="mySlides">
+    <img src="green-grape1.jpg" alt="green-grape">
+  </div>
+  
+  <div class="mySlides">
+    <img src="fresh-apple.jpg" alt="fresh-apple">
+  </div>
+  
+  <div class="mySlides">
+    <img src="mangos_image.jpg" alt="mangos_image">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  
+
+</div>
+</div>
+<div class="box">
+		<p>Welcome to Waheed Fruit Merchat, your one-stop destination for the freshest and finest fruits from across the bountiful landscapes of India. At Waheed Fruit Merchat, we take pride in bringing you a diverse selection of premium fruits that showcase the rich agricultural heritage of our country.
+		</p>
+	<h3>Explore the Essence of India's Orchards:</h3>
+   		<p>Indulge in a sensory journey through the orchards of India with our wide array of fruits sourced from different regions. From the juicy Alphonso mangoes of Ratnagiri to the crisp apples from Himachal Pradesh, each fruit tells a unique story of its origin and the dedicated farmers who nurture them.</p>
+	<h3>Customer Satisfaction:</h3>
+		<p>Your satisfaction is our success. We strive to exceed your expectations with every order. If you have any questions or concerns, our dedicated customer support team is here to assist you. Your feedback is invaluable in helping us continually improve our services.</p>
+</div>
+
+</div>
+<!-- <script>
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    let i;
+    const slides = document.getElementsByClassName("mySlides");
+    
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    slideIndex++;
+    
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 2000); // Change slide every 2 seconds (adjust as needed)
+  }
+
+  function plusSlides(n) {
+    showSlides((slideIndex += n));
+  }
+</script> -->
+
+<script>
+  let slideIndex = 0;
+  let slideInterval;
+
+  function showSlides() {
+    const slides = document.getElementsByClassName("mySlides");
+
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    slideIndex++;
+
+    if (slideIndex >= slides.length) {
+      slideIndex = 0;
+    }
+
+    slides[slideIndex].style.display = "block";
+  }
+
+  function plusSlides(n) {
+    clearInterval(slideInterval);
+    showSlides();
+    slideInterval = setInterval(showSlides, 2000);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    showSlides(); // Initial call to display the first slide
+    slideInterval = setInterval(showSlides, 2000); // Start automatic slideshow
+
+    document.querySelector(".prev").addEventListener("click", function () {
+      plusSlides(-1);
+    });
+
+    document.querySelector(".next").addEventListener("click", function () {
+      plusSlides(1);
+    });
+  });
+</script>
+
+
+
+</body>
+</html>
